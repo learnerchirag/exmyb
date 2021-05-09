@@ -5,6 +5,7 @@ const connection = require("./db");
 const { response } = require("express");
 
 const app = express();
+const server = require("http").createServer(app);
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -123,6 +124,6 @@ app.delete("/delete/:productId", (req, res) => {
 });
 
 const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
+server.listen(PORT, () => {
   console.log("server running at" + PORT);
 });
