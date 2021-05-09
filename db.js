@@ -7,6 +7,7 @@ const connection = mysql.createConnection({
   password: "password",
   database: "products",
   multipleStatements: true,
+  ssl: "Amazon RDS",
 });
 
 module.exports = connection;
